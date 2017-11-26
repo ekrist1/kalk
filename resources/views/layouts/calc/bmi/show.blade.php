@@ -7,7 +7,7 @@
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="BMI kalkulator" />
     <meta property="og:description"        content="Med vår BMI-kalkulator finner du raskt ut om du er overvektig eller undervektig" />
-    <meta property="og:image"              content="{{ url('bmi.jpg') }}" />
+    <meta property="og:image"              content="{{ asset('storage/bmi.jpg') }}" />
 @endsection
 
 @section('content')

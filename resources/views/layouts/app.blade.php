@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Altonline') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
@@ -21,7 +21,7 @@
                 <div class="flex items-center justify-center h-12">
                     <div class="mr-6">
                         <a href="{{ url('/') }}" class="no-underline">
-                            <img src="{{ url('altlogo.png') }}" alt="{{ config('app.name', 'Altonline') }}">
+                            <img src="{{ asset('storage/altlogo.png') }}" alt="{{ config('app.name', 'Altonline') }}">
                         </a>
                     </div>
                     <div class="flex-1 text-right">
