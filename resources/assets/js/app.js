@@ -25,6 +25,7 @@ Vue.use(VeeValidate, {
  */
 
 Vue.component('calc-bmi', require('./components/CalcBMI.vue'));
+Vue.component('calc-paint', require('./components/CalcPaint.vue'));
 
 const app = new Vue({
     el: '#app'

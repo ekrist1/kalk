@@ -16,3 +16,7 @@
 
 @endsection
 
+@push('scripts')
+    @include('partials.analytics')
+@endpush
+

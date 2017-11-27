@@ -17,7 +17,5 @@ Route::get('/', function () {
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/calc/bmi', function () {
-	return view('layouts/calc/bmi/show');
-});
-
+Route::view('/calc/bmi', 'layouts/calc/bmi/show');
+Route::view('/calc/paint', 'layouts/calc/paint/show');
