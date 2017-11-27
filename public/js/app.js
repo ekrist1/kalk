@@ -963,7 +963,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(10);
-module.exports = __webpack_require__(41);
+module.exports = __webpack_require__(42);
 
 
 /***/ }),
@@ -973,7 +973,7 @@ module.exports = __webpack_require__(41);
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vee_validate__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vee_validate_dist_locale_nb_NO__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vee_validate_dist_locale_nb_NO__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vee_validate_dist_locale_nb_NO___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vee_validate_dist_locale_nb_NO__);
 
 /**
@@ -999,7 +999,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["b" /* default */], {
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('calc-bmi', __webpack_require__(37));
+Vue.component('calc-bmi', __webpack_require__(38));
 
 var app = new Vue({
   el: '#app'
@@ -36845,12 +36845,18 @@ var index_esm = {
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
+!function(e,t){ true?module.exports=t():"function"==typeof define&&define.amd?define(t):(e.__vee_validate_locale__nb_NO=e.__vee_validate_locale__nb_NO||{},e.__vee_validate_locale__nb_NO.js=t())}(this,function(){"use strict";var e={name:"nb_NO",messages:{after:function(e,t){return e+"-feltet må være etter "+t[0]+"."},alpha_dash:function(e){return e+"-feltet kan bare inneholde alfa-numeriske tegn, samt bindestrek og understrek."},alpha_num:function(e){return e+" kan bare inneholde alfanumeriske tegn."},alpha_spaces:function(e){return e+"-feltet kan bare inneholde alfa-numeriske teng og mellomrom."},alpha:function(e){return e+"-feltet kan bare inneholde bokstaver."},before:function(e,t){return e+"-feltet må være før "+t[0]+"."},between:function(e,t){return e+"-feltet må være imellom "+t[0]+" og "+t[1]+"."},confirmed:function(e){return e+"-feltet kan ikke bekreftes."},credit_card:function(e){return e+"-feltet er ugyldig."},date_between:function(e,t){return e+"-feltet må være imellom "+t[0]+" og "+t[1]+"."},date_format:function(e,t){return e+"-feltet må være i følgende format: "+t[0]+"."},decimal:function(e,t){void 0===t&&(t=[]);var n=t[0];return void 0===n&&(n="*"),e+"-feltet må være numerisk samt kan inneholde "+("*"===n?"":n)+" desimaler."},digits:function(e,t){return e+"-feltet må være numerisk og inneholde nøyaktig "+t[0]+" siffer."},dimensions:function(e,t){return e+"-feltet må være "+t[0]+" ganger "+t[1]+" piksler."},email:function(e){return e+"-feltet må være en gyldig E-post adresse."},ext:function(e){return e+"-feltet må være en gyldig fil."},image:function(e){return e+"-feltet må være et bilde."},in:function(e){return e+"-feltet må være en gyldig verdi."},ip:function(e){return e+"-feltet må være en gyldig IP Adresse."},max:function(e,t){return e+"-feltet kan ikke være lengre enn "+t[0]+" tegn."},max_value:function(e,t){return e+"-feltet må være "+t[0]+" eller mindre."},mimes:function(e){return e+"-feltet må ha en gyldig filtype."},min:function(e,t){return e+"-feltet må være minst "+t[0]+" tegn."},min_value:function(e,t){return e+"-feltet må være "+t[0]+" eller mer."},not_in:function(e){return e+"-feltet må være en gyldig verdi."},numeric:function(e){return e+"-feltet kan bare inneholde nummer."},regex:function(e){return e+"-feltet sin formatering er ugyldig."},required:function(e){return e+"-feltet er obligatorisk."},size:function(e,t){return e+"-feltet må være mindre enn "+function(e){var t=0==(e=1024*Number(e))?0:Math.floor(Math.log(e)/Math.log(1024));return 1*(e/Math.pow(1024,t)).toFixed(2)+" "+["Byte","KB","MB","GB","TB","PB","EB","ZB","YB"][t]}(t[0])+"."},url:function(e){return e+"-feltet er ikkje en gyldig URL."}},attributes:{}};return"undefined"!=typeof VeeValidate&&VeeValidate.Validator.addLocale(e),e});
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var disposed = false
-var normalizeComponent = __webpack_require__(38)
+var normalizeComponent = __webpack_require__(39)
 /* script */
-var __vue_script__ = __webpack_require__(39)
+var __vue_script__ = __webpack_require__(40)
 /* template */
-var __vue_template__ = __webpack_require__(40)
+var __vue_template__ = __webpack_require__(41)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -36890,7 +36896,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -36999,7 +37005,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37060,19 +37066,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            Height: 170,
-            Weight: 68,
+            Height: '',
+            Weight: '',
             bmiResult: '',
             bmiMessage: '',
             ads: ''
         };
-    },
-    mounted: function mounted() {
-        this.calculateBMI();
     },
 
     methods: {
@@ -37103,13 +37109,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.bmiMessage = '(Du har fedme klasse 3)';
                 this.ads = '<a href="http://amzn.to/2A7nT2f" target="_blank">Gå ned i vekt? Prøv ut og kjøp «Naturade Weight Gain Instant Nutrition Drink Mix, Vanilla, 40.6 Ounce» fra Amazon</a> ';
             }
+        },
+        clearForm: function clearForm() {
+            this.Height = '';
+            this.Weight = '';
+            this.bmiMessage = '';
+            this.bmiResult = '';
         }
 
     }
 });
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -37258,6 +37270,25 @@ var render = function() {
                 }
               },
               [_vm._v("\n                  Se din BMI\n                ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass:
+                  "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.clearForm($event)
+                  }
+                }
+              },
+              [
+                _vm._v(
+                  "\n                        Nullstill\n                    "
+                )
+              ]
             )
           ])
         ]),
@@ -37361,20 +37392,10 @@ if (false) {
 }
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */
-/***/ (function(module, exports, __webpack_require__) {
-
-!function(e,t){ true?module.exports=t():"function"==typeof define&&define.amd?define(t):(e.__vee_validate_locale__nb_NO=e.__vee_validate_locale__nb_NO||{},e.__vee_validate_locale__nb_NO.js=t())}(this,function(){"use strict";var e={name:"nb_NO",messages:{after:function(e,t){return e+"-feltet må være etter "+t[0]+"."},alpha_dash:function(e){return e+"-feltet kan bare inneholde alfa-numeriske tegn, samt bindestrek og understrek."},alpha_num:function(e){return e+" kan bare inneholde alfanumeriske tegn."},alpha_spaces:function(e){return e+"-feltet kan bare inneholde alfa-numeriske teng og mellomrom."},alpha:function(e){return e+"-feltet kan bare inneholde bokstaver."},before:function(e,t){return e+"-feltet må være før "+t[0]+"."},between:function(e,t){return e+"-feltet må være imellom "+t[0]+" og "+t[1]+"."},confirmed:function(e){return e+"-feltet kan ikke bekreftes."},credit_card:function(e){return e+"-feltet er ugyldig."},date_between:function(e,t){return e+"-feltet må være imellom "+t[0]+" og "+t[1]+"."},date_format:function(e,t){return e+"-feltet må være i følgende format: "+t[0]+"."},decimal:function(e,t){void 0===t&&(t=[]);var n=t[0];return void 0===n&&(n="*"),e+"-feltet må være numerisk samt kan inneholde "+("*"===n?"":n)+" desimaler."},digits:function(e,t){return e+"-feltet må være numerisk og inneholde nøyaktig "+t[0]+" siffer."},dimensions:function(e,t){return e+"-feltet må være "+t[0]+" ganger "+t[1]+" piksler."},email:function(e){return e+"-feltet må være en gyldig E-post adresse."},ext:function(e){return e+"-feltet må være en gyldig fil."},image:function(e){return e+"-feltet må være et bilde."},in:function(e){return e+"-feltet må være en gyldig verdi."},ip:function(e){return e+"-feltet må være en gyldig IP Adresse."},max:function(e,t){return e+"-feltet kan ikke være lengre enn "+t[0]+" tegn."},max_value:function(e,t){return e+"-feltet må være "+t[0]+" eller mindre."},mimes:function(e){return e+"-feltet må ha en gyldig filtype."},min:function(e,t){return e+"-feltet må være minst "+t[0]+" tegn."},min_value:function(e,t){return e+"-feltet må være "+t[0]+" eller mer."},not_in:function(e){return e+"-feltet må være en gyldig verdi."},numeric:function(e){return e+"-feltet kan bare inneholde nummer."},regex:function(e){return e+"-feltet sin formatering er ugyldig."},required:function(e){return e+"-feltet er obligatorisk."},size:function(e,t){return e+"-feltet må være mindre enn "+function(e){var t=0==(e=1024*Number(e))?0:Math.floor(Math.log(e)/Math.log(1024));return 1*(e/Math.pow(1024,t)).toFixed(2)+" "+["Byte","KB","MB","GB","TB","PB","EB","ZB","YB"][t]}(t[0])+"."},url:function(e){return e+"-feltet er ikkje en gyldig URL."}},attributes:{}};return"undefined"!=typeof VeeValidate&&VeeValidate.Validator.addLocale(e),e});
 
 /***/ })
 /******/ ]);

@@ -25,6 +25,9 @@
                     <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4" v-bind:class="{ 'opacity-50 cursor-not-allowed': errors.any() }" @click.prevent="calculateBMI">
                       Se din BMI
                     </button>
+                        <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4" @click.prevent="clearForm">
+                            Nullstill
+                        </button>
                     </div>
                 </form>
                 <div class="mt-3">
@@ -58,15 +61,12 @@
     export default {
         data() {
             return {
-                Height: 170,
-                Weight: 68,
+                Height: '',
+                Weight: '',
                 bmiResult: '',
                 bmiMessage: '',
                 ads: ''
             } 
-        },
-        mounted() {
-            this.calculateBMI()
         },
         methods: {
              calculateBMI: function () {
@@ -102,6 +102,12 @@
                      this.ads = '<a href="http://amzn.to/2A7nT2f" target="_blank">Gå ned i vekt? Prøv ut og kjøp «Naturade Weight Gain Instant Nutrition Drink Mix, Vanilla, 40.6 Ounce» fra Amazon</a> '
                  }
             },
+            clearForm: function () {
+                this.Height = '';
+                this.Weight = '';
+                this.bmiMessage = '';
+                this.bmiResult = '';
+            }
 
         }
     }
