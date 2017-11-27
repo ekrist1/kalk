@@ -11,14 +11,14 @@
                         <label class="block text-grey-darker text-sm font-bold mb-2" for="Height">
                             Høyde (cm)
                         </label>
-                        <input class="bg-grey-lighter appearance-none border-2 border-grey-lighter hover:border-purple rounded w-full py-2 px-4 text-grey-darker" id="høyde" name="høyde" type="text" v-model="Height" v-validate="'required|min_value:140|max_value:230|digits:3'">
+                        <input class="bg-grey-lighter appearance-none border-2 border-grey-dark hover:border-purple rounded w-full py-2 px-4 text-grey-darker" id="høyde" name="høyde" type="text" v-model="Height" v-validate="'required|min_value:140|max_value:230|digits:3'" placeholder="Skriv inn tall">
                         <span v-show="errors.has('høyde')" class="text-red-dark text-sm">{{ errors.first('høyde') }}</span>
                     </div>
                     <div class="md:w-2/3 mt-4">
                         <label class="block text-grey-darker text-sm font-bold mb-2" for="Weight">
                         Vekt (kg)
                         </label>
-                        <input class="bg-grey-lighter appearance-none border-2 border-grey-lighter hover:border-purple rounded w-full py-2 px-4 text-grey-darker" id="vekt" name="vekt" type="text" v-model="Weight" v-validate="'required|min_value:20|max_value:250'">
+                        <input class="bg-grey-lighter appearance-none border-2 border-grey-dark hover:border-purple rounded w-full py-2 px-4 text-grey-darker" id="vekt" name="vekt" type="text" v-model="Weight" v-validate="'required|min_value:20|max_value:250'" placeholder="Skriv inn tall">
                         <span v-show="errors.has('vekt')" class="text-red-dark text-sm">{{ errors.first('vekt') }}</span>
                     </div>
                     <div class="mt-3">

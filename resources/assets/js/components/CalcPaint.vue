@@ -11,7 +11,7 @@
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="Size">
                     Hvor mange kvadratmeter (m²) er rommet du skal male?
                 </label>
-                <input class="bg-grey-lighter appearance-none border-2 border-grey-lighter hover:border-purple rounded w-full py-2 px-4 text-grey-darker" id="størrelse" name="størrelse" type="text" v-model="Size" v-validate="'required|min_value:1|max_value:999'">
+                <input class="bg-grey-lighter appearance-none border-2 border-grey-dark hover:border-purple rounded w-full py-2 px-4 text-grey-darker" id="størrelse" name="størrelse" type="text" v-model="Size" v-validate="'required|min_value:1|max_value:999'" placeholder="Skriv inn tall">
                 <span v-show="errors.has('størrelse')" class="text-red-dark text-sm">{{ errors.first('størrelse') }}</span>
             </div>
             <div class="mt-3">
