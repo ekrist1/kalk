@@ -19,6 +19,7 @@ class CreateNordpoolsTable extends Migration
             $table->decimal('price', 8,2);
             $table->string('area');
             $table->text('description');
+            $table->text('type');
             $table->timestamps();
         });
     }
