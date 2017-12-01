@@ -44,6 +44,10 @@
  * @import "utilities/skew-transforms";
  */
 
+body {
+    font-family: 'Source Sans Pro', sans-serif
+}
+
 a:link {
     text-decoration: none;
 }

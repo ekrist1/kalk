@@ -14,8 +14,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
 </head>
-<body class="bg-grey-background h-screen font-normal font-mono">
+<body class="bg-grey-background h-screen font-normal font-family: 'Source Sans Pro', sans-serif">
     <div id="app">
         <nav class="bg-grey-background h-12">
             <div class="container mx-auto h-full">

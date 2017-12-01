@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('meta')
-    <title>Hvor mye maling behøver du</title>
+    <title>Hvor mye maling trenger jeg</title>
     <meta name="description" content="Finn ut hvor mye maling du behøver ved innedørsmaling">
     <meta property="og:url"                content="https://kalkulator.altonline.no/calc/paint" />
     <meta property="og:type"               content="article" />

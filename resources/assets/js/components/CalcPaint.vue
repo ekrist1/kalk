@@ -2,8 +2,8 @@
     <div>
     <div id="content" class="px-6 pb-8 pt-20 md:pt-16 w-full max-w-lg mx-auto mt-4">
         <form class="w-full">
-            <div class="mb-4">
-                <label class="block text-grey text-lg font-bold md:text-center" for="inline-full-name">
+            <div class="mb-6">
+                <label class="block text-green-dark text-xl font-light md:text-center" for="inline-full-name">
                     Beregn hvor mye maling du behøver
                 </label>
             </div>
