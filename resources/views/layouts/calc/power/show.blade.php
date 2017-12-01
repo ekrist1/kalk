@@ -12,7 +12,7 @@
 
 @section('content')
 
-<power :vendors="{{ $vendors }}" :prices="{{ $prices }}"></power>
+<power :vendors="{{ $vendors }}" :prices="{{ $prices }}" :elspotaverage="{{ $elspotAveragePrice }}"></power>
 
 @endsection
 

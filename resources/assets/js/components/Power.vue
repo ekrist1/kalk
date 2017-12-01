@@ -32,19 +32,39 @@
                     forbrukeren til den prisen leverandøren kjøper strømmen for på børsen.</p>
             </div>
             <div class="mt-4">
-
             </div>
-            <p>Sortering:
+            <div class="md:w-1/3">
+                <label class="block text-grey-darker text-sm font-bold mb-2" for="kwh">
+                    Hvor mye strøm bruker du i løpet av året?
+                </label>
+                <input class="bg-grey-lighter appearance-none border-2 border-grey-dark hover:border-purple rounded w-full py-2 px-4 text-grey-darker" id="kwh" name="kwh" type="number" v-model="kwh" v-validate="'required|min_value:1|max_value:1000000'" placeholder="Skriv inn tall">
+                <span v-show="errors.has('kwh')" class="text-red-dark text-sm">{{ errors.first('kwh') }}</span>
+                <p class="text-xs mt-1">For å finne en estimert pris på spotprisavtalene, skriv inn ditt årsforbruk på strøm (kWh)</p>
+            </div>
+            <div class="md:w-1/3 mt-3">
+                <label class="block text-grey-darker text-sm font-bold mb-2" for="spot">
+                    Spotpris
+                </label>
+                <input class="bg-grey-lighter appearance-none border-2 border-grey-dark hover:border-purple rounded w-full py-2 px-4 text-grey-darker" id="spot" name="spot" type="text" v-model="spot" v-validate="'required|min_value:0|max_value:300'" placeholder="Skriv inn tall">
+                <span v-show="errors.has('spot')" class="text-red-dark text-sm">{{ errors.first('spot') }}</span>
+                <p class="text-xs mt-1">Spotsprisen oppgitt er basert på SSB sin statistikk fra siste kvartal. </p>
+            </div>
+            <p class="mt-4">Sortering:
             <button class="text-blue font-bold hover:text-blue-darker">Lav</button>
             <button class="text-blue font-bold hover:text-blue-darker">Høy</button></p>
             <div id="vendor" class="mt-4">
-                <div class="mt-4 mb-4 border-2 border-grey p-4" v-for="vendor in vendors">
-                    <h3 class="text-lg font-bold text-grey-darker mb-3">{{ vendor.company }}</h3>
-                    <p>Avtaletype: {{ vendor.agreement_type }}</p>
-                    <p>Påslag spotpris: {{ vendor.price }} kr</p>
-                    <p>Gebyr: {{ vendor.fee }}</p>
-                    <p class="mt-4">Firmabeskrivelse: {{ vendor.description }}</p>
-
+                <div class="mt-4 mb-4 border-2 border-grey p-4 bg-blue-dark" v-for="vendor in vendors">
+                    <h3 class="text-lg font-bold text-white mb-3">{{ vendor.company }}</h3>
+                    <p class="text-blue-lightest">Avtaletype: {{ vendor.agreement_type }}</p>
+                    <p class="text-blue-lightest">Påslag spotpris: {{ vendor.price }} kr</p>
+                    <p class="text-blue-lightest">Gebyr: {{ vendor.fee }}</p>
+                    <p class="mt-4 text-blue-lightest">Firmabeskrivelse: {{ vendor.description }}</p>
+                    <div class="flex items-center bg-blue text-white text-sm font-bold px-4 py-3 mt-6" role="alert">
+                        <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.432 0c1.34 0 2.01.912 2.01 1.957 0 1.305-1.164 2.512-2.679 2.512-1.269 0-2.009-.75-1.974-1.99C9.789 1.436 10.67 0 12.432 0zM8.309 20c-1.058 0-1.833-.652-1.093-3.524l1.214-5.092c.211-.814.246-1.141 0-1.141-.317 0-1.689.562-2.502 1.117l-.528-.88c2.572-2.186 5.531-3.467 6.801-3.467 1.057 0 1.233 1.273.705 3.23l-1.391 5.352c-.246.945-.141 1.271.106 1.271.317 0 1.357-.392 2.379-1.207l.6.814C12.098 19.02 9.365 20 8.309 20z"/></svg>
+                        <p> Estimert pris per mnd.: {{ calculatePrice(vendor.fee, vendor.price, vendor.invoice) | roundCalculatedPrice }}</p>
+                    </div>
+                    <p class="text-xs mt-1 text-blue-lightest">Vær obs på at enkelte områder i Nord-Norge er fritatt moms og andre avgifter slik
+                    at den estimerte prisen kan være lavere i disse områdene</p>
                 </div>
             </div>
 
@@ -88,6 +108,17 @@
             },
             prices: {
                 type: Array
+            },
+            elspotaverage: {
+                type: Number
+            }
+        },
+        data () {
+            return {
+                kwh: 6000,
+                spot: {
+                    type: Number
+                }
             }
         },
         filters: {
@@ -95,13 +126,22 @@
                 if (value) {
                     return moment(String(value)).format('DD/MM/YYYY hh:mm')
                 }
+            },
+            roundCalculatedPrice: function (value) {
+                return Math.round(value);
             }
         },
-        data () {
-            return {
+        computed: {
 
-            }
         },
+        mounted() {
+          this.spot = this.elspotaverage;
+        },
+        methods: {
+            calculatePrice: function (fee, price, invoice) {
+                return parseFloat(fee) + ((this.kwh / 12) * (parseFloat(this.spot) + (price / 100)));
+            }
+        }
 
     }
 </script>
