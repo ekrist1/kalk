@@ -2,13 +2,13 @@
     <div>
         <div id="content" class="px-6 pb-8 pt-20 md:pt-16 w-full max-w-lg mx-auto mt-4">
                 <div class="mb-4">
-                    <label class="block text-grey text-lg font-bold md:text-center">
-                        Strømpriser
+                    <label class="block text-grey-dark text-lg font-bold md:text-center">
+                        Finn den billigste strømleverandøren og beregn strømkostnadene dine
                     </label>
                 </div>
 
             <div class="container mx-auto text-center">
-                <img src="/storage/bulp.png" alt="bilde av lyspære">
+                <img src="/storage/energy.svg" alt="Bilde av energi">
             </div>
 
             <ul class="list-reset flex">
@@ -103,7 +103,7 @@
 
     export default {
         props: {
-            vendors: {
+            initialVendors: {
                 type: Array
             },
             prices: {
@@ -118,7 +118,9 @@
                 kwh: 6000,
                 spot: {
                     type: Number
-                }
+                },
+                vendors: [],
+                sortKey: 'asc'
             }
         },
         filters: {
@@ -136,6 +138,7 @@
         },
         mounted() {
           this.spot = this.elspotaverage;
+          this.vendors = this.initialVendors;
         },
         methods: {
             calculatePrice: function (fee, price, invoice) {
