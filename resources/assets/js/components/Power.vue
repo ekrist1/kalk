@@ -49,11 +49,11 @@
                 <span v-show="errors.has('spot')" class="text-red-dark text-sm">{{ errors.first('spot') }}</span>
                 <p class="text-xs mt-1">Spotsprisen oppgitt er basert på SSB sin statistikk fra siste kvartal. </p>
             </div>
-            <p class="mt-4">Sortering:
-            <button class="text-blue font-bold hover:text-blue-darker">Lav</button>
-            <button class="text-blue font-bold hover:text-blue-darker">Høy</button></p>
-            <div class="flex flex-wrap mx-2">
-                <div class="mt-4 mb-4 ml-3 border-2 border-grey p-4 bg-grey-lightest w-2/5" v-for="vendor in vendors" :key="vendor.id">
+            <p class="mt-4">
+            <button class="text-blue font-bold hover:text-blue-darker">Høyeste pris</button> |
+            <button class="text-blue font-bold hover:text-blue-darker">Laveste pris</button></p>
+            <div class="flex flex-wrap">
+                <div class="mt-4 mb-4 mr-3 border-2 border-grey p-4 bg-grey-lightest sm:w-full md:w-2/5" v-for="vendor in vendors" :key="vendor.id">
                     <h3 class="text-lg font-bold text-darkest mb-3">{{ vendor.company }}</h3>
                     <p class="text-darker">Avtalenavn: {{ vendor.agreement_type }}</p>
                     <p class="text-darker">Påslag spotpris: {{ vendor.price }} kr</p>
