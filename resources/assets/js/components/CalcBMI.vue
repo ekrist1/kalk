@@ -35,7 +35,7 @@
                 </div>
                 <div class="mt-3">
                     <p class="text-sm">Annonse</p>
-                    <p v-html="ads"></p>
+                    <p v-html="adamazon"></p>
                 </div>
                 <div class="mt-4">
                     <p>BMI står for «Body Mass Index» og regnes ut fra vekt og høyde. Denne kalkulatoren gir deg raskt oversikt om du har normalvekt, eller om du er overvektig/undervektig  </p>
@@ -52,20 +52,28 @@
                         over 30 Fedme
                     </p>
                 </div>
+            <ads :pagead="ads"></ads>
         </div>
 
     </div>
 </template>
 
 <script>
+    import Ads from './Ads';
     export default {
+        components: { Ads },
         data() {
             return {
                 Height: '',
                 Weight: '',
                 bmiResult: '',
                 bmiMessage: '',
-                ads: ''
+                adamazon: '',
+                ads: {
+                    title: 'Lei av gamle serier? Prøv Amazon Prime gratis 30 dager',
+                    link: 'http://amzn.to/2zYek73',
+                    image: '/storage/amazon.png'
+                }
             } 
         },
         methods: {
@@ -79,27 +87,27 @@
             showBMIMessage: function () {
                  if (this.bmiResult < 18.5) {
                      this.bmiMessage = '(Du er undervektig)';
-                     this.ads = '<a href="http://amzn.to/2Bmmtz3" target="_blank">Gå opp i vekt? Prøv ut og kjøp «Naturade Weight Gain Instant Nutrition Drink Mix, Vanilla, 40.6 Ounce» fra Amazon</a> '
+                     this.adamazon = '<a href="http://amzn.to/2Bmmtz3" target="_blank">Gå opp i vekt? Prøv ut og kjøp «Naturade Weight Gain Instant Nutrition Drink Mix, Vanilla, 40.6 Ounce» fra Amazon</a> '
                  }
                  else if (this.bmiResult >= 18.5 && this.bmiResult <= 24.9 ) {
                      this.bmiMessage = '(Du har normalvekt)';
-                     this.ads = '<a href="http://amzn.to/2zr1Q3C" target="_blank">Hold deg i form? Prøv ut og kjøp «Baetea 14 Day Teatox Detox Herbal Tea Supplement (14 Tea Bags)» fra Amazon</a> '
+                     this.adamazon = '<a href="http://amzn.to/2zr1Q3C" target="_blank">Hold deg i form? Prøv ut og kjøp «Baetea 14 Day Teatox Detox Herbal Tea Supplement (14 Tea Bags)» fra Amazon</a> '
                 }
                  else if (this.bmiResult >= 25 && this.bmiResult <= 29.9 ) {
                      this.bmiMessage = '(Du har overvektig)';
-                     this.ads = '<a href="http://amzn.to/2A7nT2f" target="_blank">Gå ned i vekt? Prøv ut og kjøp «Naturade Weight Gain Instant Nutrition Drink Mix, Vanilla, 40.6 Ounce» fra Amazon</a> '
+                     this.adamazon = '<a href="http://amzn.to/2A7nT2f" target="_blank">Gå ned i vekt? Prøv ut og kjøp «Naturade Weight Gain Instant Nutrition Drink Mix, Vanilla, 40.6 Ounce» fra Amazon</a> '
                  }
                  else if (this.bmiResult >= 30 && this.bmiResult <= 34.9 ) {
                      this.bmiMessage = '(Du har fedme klasse 1)';
-                     this.ads = '<a href="http://amzn.to/2A7nT2f" target="_blank">Gå ned i vekt? Prøv ut og kjøp «Naturade Weight Gain Instant Nutrition Drink Mix, Vanilla, 40.6 Ounce» fra Amazon</a> '
+                     this.adamazon = '<a href="http://amzn.to/2A7nT2f" target="_blank">Gå ned i vekt? Prøv ut og kjøp «Naturade Weight Gain Instant Nutrition Drink Mix, Vanilla, 40.6 Ounce» fra Amazon</a> '
                  }
                  else if (this.bmiResult >= 35 && this.bmiResult <= 39.9 ) {
                      this.bmiMessage = '(Du har fedme klasse 2)';
-                     this.ads = '<a href="http://amzn.to/2A7nT2f" target="_blank">Gå ned i vekt? Prøv ut og kjøp «Naturade Weight Gain Instant Nutrition Drink Mix, Vanilla, 40.6 Ounce» fra Amazon</a> '
+                     this.adamazon = '<a href="http://amzn.to/2A7nT2f" target="_blank">Gå ned i vekt? Prøv ut og kjøp «Naturade Weight Gain Instant Nutrition Drink Mix, Vanilla, 40.6 Ounce» fra Amazon</a> '
                  }
                  else if (this.bmiResult >= 40) {
                      this.bmiMessage = '(Du har fedme klasse 3)';
-                     this.ads = '<a href="http://amzn.to/2A7nT2f" target="_blank">Gå ned i vekt? Prøv ut og kjøp «Naturade Weight Gain Instant Nutrition Drink Mix, Vanilla, 40.6 Ounce» fra Amazon</a> '
+                     this.adamazon = '<a href="http://amzn.to/2A7nT2f" target="_blank">Gå ned i vekt? Prøv ut og kjøp «Naturade Weight Gain Instant Nutrition Drink Mix, Vanilla, 40.6 Ounce» fra Amazon</a> '
                  }
             },
             clearForm: function () {

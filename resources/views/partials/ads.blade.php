@@ -1,3 +1,1 @@
-<script>
-
-</script>
+<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=6d07c506-9dfc-4063-9d47-c49e515f1bbd"></script>

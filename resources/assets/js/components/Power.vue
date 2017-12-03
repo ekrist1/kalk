@@ -20,7 +20,6 @@
                 </li>
             </ul>
 
-
             <div class="mt-4">
                 <p>I Norge er kraftmarkedet deregulert og det er fri konkurranse mellom strømleverandørene i markedet. Som forbruker kan du benytte denne konkurransen til å få billigere strøm. </p>
             </div>
@@ -43,7 +42,7 @@
             </div>
             <div class="md:w-1/3 mt-3">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="spot">
-                    Spotpris
+                    Spotpris <a href="#prices" class="text-green">(Dagens spotpriser)</a>
                 </label>
                 <input class="bg-grey-lighter appearance-none border-2 border-grey-dark hover:border-purple rounded w-full py-2 px-4 text-grey-darker" id="spot" name="spot" type="text" v-model="spot" v-validate="'required|min_value:0|max_value:300'" placeholder="Skriv inn tall">
                 <span v-show="errors.has('spot')" class="text-red-dark text-sm">{{ errors.first('spot') }}</span>
@@ -67,6 +66,8 @@
                     at den estimerte prisen kan være lavere i disse områdene</p>
                 </div>
             </div>
+
+            <ads :pagead="ads"></ads>
 
             <div id="prices" class="mt-4">
                 <h3 class="text-lg">Spotpriser</h3>
@@ -101,9 +102,10 @@
 <script>
     import moment from 'moment'
     import Powercontact from './PowerContact.vue';
+    import Ads from './Ads';
 
     export default {
-        components: { Powercontact },
+        components: { Powercontact, Ads },
         props: {
             initialVendors: {
                 type: Array
@@ -117,12 +119,17 @@
         },
         data () {
             return {
-                kwh: 6000,
+                kwh: 12000,
                 spot: {
                     type: Number
                 },
                 vendors: [],
                 sortKey: 'asc',
+                ads: {
+                    title: 'Lei av gamle serier? Prøv Amazon Prime gratis 30 dager',
+                    link: 'http://amzn.to/2zYek73',
+                    image: '/storage/amazon.png'
+                }
             }
         },
         filters: {
