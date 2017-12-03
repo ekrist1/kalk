@@ -18,23 +18,11 @@ class PowerController extends Controller
 
     public function index() {
 
-        /*$client = new Client();
-        $res = $client->request('GET', 'https://www.nordpoolgroup.com/api/map/data/daily/?currency=NOK');
-        $obj = json_decode($res->getBody(), true);
-
-        $test1 = array_get($obj, 'Prices.1.Value');
-        foreach ($obj as $nordpoolStat) {
-            foreach ($nordpoolStat as $elspot) {
-               $value = array_get($elspot, 'Area');
-               dd($value);
-            }
-        }
-
-        dd($test1);*/
+        $elspotAveragePrice = (((Nordpool::sum('price')) / 5) * 1.25) / 1000;
 
         $vendors = Power::all();
         $prices = Nordpool::all();
-        $elspotAveragePrice = Redis::get('elspotAveragePrice');
+        //$elspotAveragePrice = Redis::get('elspotAveragePrice');
         return view('layouts.calc.power.show', compact(['vendors', 'prices', 'elspotAveragePrice']));
     }
 

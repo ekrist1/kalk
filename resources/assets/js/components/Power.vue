@@ -47,7 +47,7 @@
                 </label>
                 <input class="bg-grey-lighter appearance-none border-2 border-grey-dark hover:border-purple rounded w-full py-2 px-4 text-grey-darker" id="spot" name="spot" type="text" v-model="spot" v-validate="'required|min_value:0|max_value:300'" placeholder="Skriv inn tall">
                 <span v-show="errors.has('spot')" class="text-red-dark text-sm">{{ errors.first('spot') }}</span>
-                <p class="text-xs mt-1">Spotsprisen oppgitt er basert på SSB sin statistikk fra siste kvartal. </p>
+                <p class="text-xs mt-1">Spotsprisen oppgitt er basert gjennomsnittsprisen i Norge. Oppdateres daglig. </p>
             </div>
             <p class="mt-4">
             <button class="text-blue font-bold hover:text-blue-darker">Høyeste pris</button> |
@@ -86,7 +86,7 @@
             <div class="mt-4">
                 <div class="mt-4 mb-4 border-2 border-grey p-4" v-for="price in prices">
                     <h3 class="text-lg font-bold text-grey-darker mb-3">{{ price.area }}</h3>
-                    <p>Pris (kWh): {{ price.price }}</p>
+                    <p>Pris (kWh): {{ (price.price / 1000).toFixed(4) }}</p>
                     <p>Sist oppdatert: {{ price.last_updated | formatDate }}</p>
                     <p>Beskrivelse: {{ price.description }}</p>
 

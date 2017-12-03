@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        'App\Console\Commands\UpdateElspotPrices',
     ];
 
     /**
@@ -26,6 +26,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $schedule->command('UpdateElspotPrices:Update')->daily()->appendOutputTo(storage_path('logs/elspot.log'));
     }
 
     /**
