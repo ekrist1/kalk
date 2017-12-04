@@ -56,7 +56,7 @@
                     <p class="text-sm text-green-dark" v-if="index === 0 && sortKey === 'asc'">Strømvinner</p>
                     <h3 class="text-lg font-bold text-darkest mb-3">{{ vendor.company }}</h3>
                     <p class="text-darker">Avtalenavn: {{ vendor.agreement_type }}</p>
-                    <p class="text-darker">Påslag spotpris: {{ vendor.price }} kr</p>
+                    <p class="text-darker">Påslag spotpris: {{ vendor.price }} øre/kWh</p>
                     <p class="text-darker">Gebyr: {{ vendor.fee }}</p>
                     <powercontact :vendordescription="vendor.description"></powercontact>
                     <div class="flex items-center bg-orange text-white text-sm font-bold px-4 py-3 mt-6" role="alert">
@@ -156,7 +156,7 @@
           this.vendors = this.initialVendors;
         },
         methods: {
-           
+
         },
 
     }
