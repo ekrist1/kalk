@@ -20,5 +20,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::view('/calc/bmi', 'layouts/calc/bmi/show');
 Route::view('/calc/paint', 'layouts/calc/paint/show');
 Route::get('/calc/power', 'PowerController@index');
+Route::get('/calc/creditcard', 'CreditcardController@index');
 Route::get('/admin/power', 'PowerController@create');
 Route::patch('/admin/power', 'PowerController@store');
