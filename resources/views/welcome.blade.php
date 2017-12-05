@@ -30,28 +30,28 @@
     </div>
     <div class="bg-grey-background text-center py-4 lg:px-4">
         <a href="{{ url('/calc/bmi') }}">
-        <div class="p-2 bg-indigo-darker items-center text-indigo-lightest leading-none lg:rounded-full flex-grow lg:inline-flex" role="alert">
+        <div class="p-2 bg-indigo-darker items-center text-indigo-lightest leading-none lg:rounded-full flex lg:inline-flex" role="alert">
             <span class="flex rounded-full bg-indigo uppercase px-2 py-1 text-xs font-bold mr-3">Ny</span>
             <span class="font-semibold mr-2 text-left flex-auto">Prøv vår BMI-kalkulator</span>
             <svg class="opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" fill="#FFF" /></svg>
         </div>
         </a>
         <a href="{{ url('/calc/paint') }}">
-            <div class="p-2 bg-indigo-darker items-center text-indigo-lightest leading-none lg:rounded-full flex-grow lg:inline-flex" role="alert">
+            <div class="p-2 bg-indigo-darker items-center text-indigo-lightest leading-none lg:rounded-full flex lg:inline-flex" role="alert">
                 <span class="flex rounded-full bg-indigo uppercase px-2 py-1 text-xs font-bold mr-3">Ny</span>
                 <span class="font-semibold mr-2 text-left flex-auto">Hvor mye maling trenger du?</span>
                 <svg class="opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" fill="#FFF" /></svg>
             </div>
         </a>
         <a href="{{ url('/calc/power') }}">
-            <div class="p-2 bg-indigo-darker items-center text-indigo-lightest leading-none lg:rounded-full flex-grow lg:inline-flex" role="alert">
+            <div class="p-2 bg-indigo-darker items-center text-indigo-lightest leading-none lg:rounded-full flex lg:inline-flex" role="alert">
                 <span class="flex rounded-full bg-indigo uppercase px-2 py-1 text-xs font-bold mr-3">Ny</span>
                 <span class="font-semibold mr-2 text-left flex-auto">Strømoversikt</span>
                 <svg class="opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" fill="#FFF" /></svg>
             </div>
         </a>
         <a href="#">
-            <div class="p-2 bg-indigo-darker items-center text-indigo-lightest leading-none lg:rounded-full flex-grow lg:inline-flex" role="alert">
+            <div class="p-2 bg-indigo-darker items-center text-indigo-lightest leading-none lg:rounded-full flex lg:inline-flex" role="alert">
                 <span class="flex rounded-full bg-indigo uppercase px-2 py-1 text-xs font-bold mr-3">Kommer</span>
                 <span class="font-semibold mr-2 text-left flex-auto">Meglerpriser</span>
                 <svg class="opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" fill="#FFF" /></svg>
@@ -61,7 +61,7 @@
 
     <div class="text-center py-4 lg:px-4">
         <a class="cursor-pointer" href="https://www.altonline.no">
-            <div class="p-2 bg-grey-darkest items-center text-indigo-lightest leading-none lg:rounded-full flex-grow lg:inline-flex" role="alert">
+            <div class="p-2 bg-grey-darkest items-center text-indigo-lightest leading-none lg:rounded-full flex lg:inline-flex" role="alert">
                 <span class="font-semibold mr-2 text-left flex-auto">Tilbake til nyhetssiden Altonline</span>
                 <svg class="opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" fill="#FFF" /></svg>
             </div>
