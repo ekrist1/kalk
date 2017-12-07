@@ -9,26 +9,58 @@
             <p class="text-xs mt-1">Skriv inn kredittbeløp for å få beregnet kostnadene på de ulike kortene</p>
         </div>
         <p class="mt-4">
-            <button class="text-blue font-bold hover:text-blue-darker" @click="sortKey = 'asc'">Laveste pris</button> |
-            <button class="text-blue font-bold hover:text-blue-darker" @click="sortKey = 'desc'">Høyeste pris</button></p>
+            <button class="text-blue font-bold hover:text-blue-darker" @click="sortedCards('asc')">Laveste eff. rente</button> |
+            <button class="text-blue font-bold hover:text-blue-darker" @click="sortedCards('desc')">Høyeste eff. rente</button></p>
         <div class="flex flex-wrap">
             <div class="mt-4 mb-4 mr-3 border-2 border-grey p-4 bg-grey-lightest sm:w-full md:w-full" v-for="(creditcard, index) in creditcards" :key="creditcard.id">
                 <h3 class="text-lg font-bold text-darkest mb-3">{{ creditcard.name }}</h3>
-                <p class="text-darker">Avtalenavn: </p>
+                <div class="flex flex-wrap -mx-2">
+                    <div class="w-full md:w-1/3 px-2">
+                        <div class="bg-grey-light h-16">
+                            <p class="text-sm text-center pt-2 text-grey-dark">Effektiv rente</p>
+                            <p class="text-3xl font-light text-center">{{ creditcard.effective_interest_rate | fixedCalculatedPrice}} % </p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 px-2">
+                        <div class="bg-grey h-16">
+                            <p class="text-sm text-center pt-2 text-grey-darkest">Årsgebyr</p>
+                            <p class="text-3xl font-light text-center">{{ creditcard.yearly_fee }} kr </p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 px-2">
+                        <div class="bg-grey-light h-16">
+                            <p class="text-sm text-center pt-2 text-grey-dark">Rentefri kreditt</p>
+                            <p class="text-3xl font-light text-center">{{ creditcard.interestfree_days }} dager </p>
+                        </div>
+                    </div>
+                    <button v-if="creditcard.showMore" class="text-blue font-bold hover:text-blue-darker ml-2 mt-2" @click="creditcard.showMore = !creditcard.showMore">
+                        Vis mindre informasjon <img src="/storage/ic_expand_less.svg">
+                    </button>
+                    <button v-if="!creditcard.showMore" class="text-blue font-bold hover:text-blue-darker ml-2 mt-2" @click="creditcard.showMore = !creditcard.showMore">
+                         Vis mer informasjon <img src="/storage/ic_expand_more.svg">
+                    </button>
+                    <div class="w-full px-2 mt-4" v-if="creditcard.showMore">
+                        <div class="border">
+                            <p class="p-2 font-bold">Gebyrer</p>
+                            <p class="p-2">{{ creditcard.no_withdrawal_fixed_fee }} kr + {{ creditcard.no_withdrawal_percentage_fee | fixedCalculatedPrice }} % rente ved uttak</p>
+                            <p class="p-2" v-if="creditcard.foreign_currency_fee">Valutapåslag ved uttak i utlandet: {{ creditcard.foreign_currency_fee }}%</p>
+                            <p class="p-2 font-bold" v-if="creditcard.description">Beskrivelse</p>
+                            <p class="p-2">{{ creditcard.description }}</p>
 
-                <div class="flex items-center bg-orange text-white text-sm font-bold px-4 py-3 mt-6" role="alert">
-                    <svg fill="#FFFFFF" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <defs>
-                            <path d="M0 0h24v24H0V0z" id="a"/>
-                        </defs>
-                        <clipPath id="b">
-                            <use overflow="visible" xlink:href="#a"/>
-                        </clipPath>
-                        <path clip-path="url(#b)" d="M23 8c0 1.1-.9 2-2 2-.18 0-.35-.02-.51-.07l-3.56 3.55c.05.16.07.34.07.52 0 1.1-.9 2-2 2s-2-.9-2-2c0-.18.02-.36.07-.52l-2.55-2.55c-.16.05-.34.07-.52.07s-.36-.02-.52-.07l-4.55 4.56c.05.16.07.33.07.51 0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2c.18 0 .35.02.51.07l4.56-4.55C8.02 9.36 8 9.18 8 9c0-1.1.9-2 2-2s2 .9 2 2c0 .18-.02.36-.07.52l2.55 2.55c.16-.05.34-.07.52-.07s.36.02.52.07l3.55-3.56C19.02 8.35 19 8.18 19 8c0-1.1.9-2 2-2s2 .9 2 2z"/>
-                    </svg>
-                    <p class="ml-3">Estimert pris per mnd.: ,-</p>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-xs mt-1 text-darker">Vi tar forbehold om feil</p>
+
+                <div class="flex items-center bg-indigo text-white text-sm font-bold px-4 py-3 mt-6" role="alert">
+                   <img src="/storage/ic_timeline.svg">
+                    <p class="ml-3">
+                        En kreditt på {{ creditvalue.toLocaleString('de-DE') }} vil koste deg ca.
+                        {{ calculateInterest(creditvalue, creditcard.effective_interest_rate) | roundCalculatedPrice}},-
+                        kr per. mnd over 12 mnd. Totale kredittkostnader over 12 mnd. er på ca.
+                        kr {{ (calculateInterest(creditvalue, creditcard.effective_interest_rate) * 12) - creditvalue | roundCalculatedPrice }},-
+                    </p>
+                </div>
+                <p class="text-xs mt-1 text-darker">* Kredittkostnadene er estimater og kan avvike noe fra fakturaen du får fra kredittkortselskapet  </p>
             </div>
         </div>
 
@@ -51,9 +83,8 @@
         },
         data () {
             return {
-                creditvalue: '',
+                creditvalue: 15000,
                 creditcards: [],
-                sortKey: 'asc',
                 ads: {
                     title: 'Lei av gamle serier? Prøv Amazon Prime gratis 30 dager',
                     link: 'http://amzn.to/2zYek73',
@@ -69,7 +100,11 @@
             },
             roundCalculatedPrice: function (value) {
                 return Math.round(value);
+            },
+            fixedCalculatedPrice: function (value) {
+                return _.round(value, 3);
             }
+
         },
         computed: {
 
@@ -78,9 +113,17 @@
             this.creditcards = this.initialCreditcards;
         },
         methods: {
-            sortedCards() {
-                return _.orderBy(this.creditcards, 'name', this.sortKey);
-            }
+            sortedCards(sortKey) {
+                this.creditcards = _.orderBy(this.creditcards, 'effective_interest_rate', sortKey);
+            },
+            calculateInterest(amount, interest) {
+                if (this.errors.any()) {
+                    return
+                }
+                let i = interest / 100 / 12; //monthly interest rate
+                let months = 12; //number of payments months
+                return amount * i * (Math.pow(1 + i, months)) / (Math.pow(1 + i, months) - 1);
+            },
         },
 
     }

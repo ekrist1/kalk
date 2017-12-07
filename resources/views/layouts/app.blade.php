@@ -14,7 +14,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,900"" rel="stylesheet">
 
 </head>
 <body class="bg-grey-background h-screen font-normal font-family: 'Source Sans Pro', sans-serif">

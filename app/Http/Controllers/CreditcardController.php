@@ -16,6 +16,11 @@ class CreditcardController extends Controller
 
         $creditcards = Creditcard::all();
 
+        $creditcards->transform(function ($creditcards) {
+            $creditcards['showMore'] = false;
+            return $creditcards;
+        });
+
         return view ('layouts.calc.creditcard.show', compact('creditcards'));
 
     }

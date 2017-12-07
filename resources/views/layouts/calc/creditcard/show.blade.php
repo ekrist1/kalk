@@ -33,7 +33,7 @@
         </ul>
 
         <div class="mt-4">
-            <p>Kredittkort er et betalingskort som gir deg kreditt ved betaling av varer og tjenester. Som forbruker spare penger ved å velge det rette kredittkortet. </p>
+            <p>Kredittkort er et betalingskort som gir deg kreditt ved betaling av varer og tjenester. Som forbruker kan du spare penger ved å velge det rette kredittkortet. </p>
         </div>
         <div class="mt-4">
             <p>Når du kjøper varer og tjenester låner du penger av banken eller kredittforetaket. Rentesatsen på kredittkort er svært høy og
