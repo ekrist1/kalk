@@ -24,7 +24,7 @@
                 <div class="flex items-center justify-center h-12">
                     <div class="mr-6">
                         <a href="{{ url('/') }}" class="no-underline">
-                            <img src="{{ asset('storage/altlogo.png') }}" alt="{{ config('app.name', 'Altonline') }}">
+                            <img src="{{ asset('storage/heisann.svg') }}" alt="{{ config('app.name', 'Altonline') }}">
                         </a>
                     </div>
                     <div class="flex-1 text-right">

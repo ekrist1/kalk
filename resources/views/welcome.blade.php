@@ -21,12 +21,12 @@
 
 @section('content')
     <div class="mb-4">
-        <label class="block text-grey-darker text-lg font-bold text-center" for="tittel">
-            Oversikt over Altonlines verktøy
+        <label class="block text-grey-darker text-2xl font-bold text-center" for="tittel">
+            Heisann - vi hjelper deg.
         </label>
     </div>
     <div class="mb-4">
-        <p class="text-center">Her finner du en samlet oversikt over kalkulatorer og verktøy.</p>
+        <p class="text-center">Heisann hjelper deg å finne de beste produktene. Prøv også ut våre nyttige kalkulatorer.</p>
     </div>
     <div class="bg-grey-background text-center py-4 lg:px-4">
         <a href="{{ url('/calc/bmi') }}">
