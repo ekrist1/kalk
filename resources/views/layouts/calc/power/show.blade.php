@@ -2,12 +2,12 @@
 
 @section('meta')
     <title>Hvem tilbyr billigst strøm</title>
-    <meta name="description" content="Altonline har samlet spotprisene fra de ulike strømleverandørene.
+    <meta name="description" content="Heisann.no har samlet spotprisene fra de ulike strømleverandørene.
     Finn den billigste strømleverandøren og beregn strømkostnadene dine">
-    <meta property="og:url"                content="https://kalkulator.altonline.no/calc/power" />
+    <meta property="og:url"                content="https://heisann.no/calc/power" />
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="Beregn strømkostnadene dine og finn biligste strømleverandør" />
-    <meta property="og:description"        content="Altonline har samlet spotprisene fra de ulike strømleverandørene.
+    <meta property="og:description"        content="Heisann.no har samlet spotprisene fra de ulike strømleverandørene.
     Finn den billigste strømleverandøren og beregn strømkostnadene dine" />
     <meta property="og:image"              content="{{ asset('storage/energy.png') }}" />
 @endsection
