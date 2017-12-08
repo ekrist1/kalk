@@ -14,10 +14,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,900"" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,900" rel="stylesheet">
 
 </head>
-<body class="bg-grey-background h-screen font-normal font-family: 'Source Sans Pro', sans-serif">
+<body class="flex flex-col bg-grey-background min-h-screen border-indigo border-t-2 font-normal font-family: 'Source Sans Pro', sans-serif">
     <div id="app">
         <nav class="bg-grey-background h-12">
             <div class="container mx-auto h-full">
@@ -51,7 +51,13 @@
         </nav>
 
         @yield('content')
+
     </div>
+
+    <footer class="text-center text-grey text-xs mt-auto mb-3 px-3"> <p>Nettsiden eies av Altonlin.no -
+            <a href="https://www.altonline.no/annonsering">Annonser</a> - <a href="https://www.altonline.no/kontakt-oss">Kontakt oss</a>
+        </p>
+    </footer>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

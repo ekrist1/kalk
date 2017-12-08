@@ -7,7 +7,7 @@
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="Stor oversikt over priser og renter på kredittkort" />
     <meta property="og:description"        content="Finn ut hva kredittkortet koster deg og hvilke kort som gir de beste fordelene" />
-    <meta property="og:image"              content="{{ asset('storage/bmi.jpg') }}" />
+    <meta property="og:image"              content="{{ asset('storage/creditcard.jpg') }}" />
 @endsection
 
 @section('content')
