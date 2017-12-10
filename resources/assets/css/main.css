@@ -55,3 +55,17 @@ a:link {
 a:visited {
     text-decoration: none;
 }
+
+div.homepagebackground {
+    background-image: url('/storage/background.jpg');
+}
+.text-shadow-white {
+    text-shadow: 0px 1px #d2d2d2;
+}
+
+.fehome {  background-image: url('/storage/bi_happy_mobile.jpg'); }
+
+@media (min-width: 576px) {
+    .fehome { background-image: url('/storage/background.jpg'); }
+}
+

@@ -2,7 +2,7 @@
     <div>
         <div id="content" class="px-6 pb-8 pt-20 md:pt-16 w-full max-w-lg mx-auto mt-4">
                 <div class="mb-4">
-                    <label class="block text-blue-dark text-3xl font-light text-center">
+                    <label class="block text-grey-dark font-bold text-3xl text-center">
                         Finn den billigste strømleverandøren og beregn strømkostnadene dine
                     </label>
                 </div>

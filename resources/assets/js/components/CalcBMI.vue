@@ -3,7 +3,7 @@
         <div id="content "class="px-6 pb-8 pt-20 md:pt-16 w-full max-w-lg mx-auto mt-4">
                 <form class="w-full">
                       <div class="mb-4">
-                          <label class="block text-green-dark text-xl font-light md:text-center" for="inline-full-name">
+                          <label class="block text-grey-dark font-bold text-3xl text-center">
                             Regn ut din BMI
                           </label>
                     </div>

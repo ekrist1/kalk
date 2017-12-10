@@ -23,6 +23,7 @@ class PowerController extends Controller
         $vendors = Power::all();
         $prices = Nordpool::all();
         //$elspotAveragePrice = Redis::get('elspotAveragePrice');
+
         return view('layouts.calc.power.show', compact(['vendors', 'prices', 'elspotAveragePrice']));
     }
 

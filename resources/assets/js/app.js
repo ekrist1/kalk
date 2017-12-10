@@ -28,6 +28,7 @@ Vue.component('calc-bmi', require('./components/CalcBMI.vue'));
 Vue.component('calc-paint', require('./components/CalcPaint.vue'));
 Vue.component('power', require('./components/Power.vue'));
 Vue.component('creditcard', require('./components/Creditcard.vue'));
+Vue.component('mobile', require('./components/Mobile.vue'));
 
 const app = new Vue({
     el: '#app'

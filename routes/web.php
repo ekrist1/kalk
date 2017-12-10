@@ -23,3 +23,4 @@ Route::get('/calc/power', 'PowerController@index');
 Route::get('/calc/creditcard', 'CreditcardController@index');
 Route::get('/admin/power', 'PowerController@create');
 Route::patch('/admin/power', 'PowerController@store');
+Route::get('/calc/mobile', 'MobileController@index');

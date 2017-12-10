@@ -12,14 +12,14 @@
     "devDependencies": {
         "axios": "^0.17",
         "cross-env": "^5.1",
-        "laravel-mix": "^1.6.2",
+        "laravel-mix": "^1.7.2",
         "lodash": "^4.17.4",
         "tailwindcss": "^0.3.0",
         "vue": "^2.5.9"
     },
     "dependencies": {
         "moment": "^2.19.3",
-        "vee-validate": "^2.0.0-rc.25",
+        "vee-validate": "^2.0.0-rc.26",
         "vue-template-compiler": "^2.5.9"
     }
 }
