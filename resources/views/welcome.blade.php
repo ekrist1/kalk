@@ -2,7 +2,11 @@
 
 @section('meta')
     <title>Heisann - vi hjelper deg</title>
-    <meta name="description" content="Prøv våre brukervennlige kalkulatorer">
+    <meta name="description" content="Heisann hjelper deg med å finne de beste avtalene enten det gjelder mobilabonnement, strøm eller kredittkort. Prøv også være brukervennlige kalkulatorer">
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="Heisann - vi hjelper deg" />
+    <meta property="og:description"        content="Heisann hjelper deg med å finne de beste avtalene enten det gjelder mobilabonnement, strøm eller kredittkort" />
+    <meta property="og:image"              content="{{ asset('storage/background.jpg') }}" />
 @endsection
 
 
@@ -32,7 +36,7 @@
 
         <div class="px-6 pb-8 pt-20 md:pt-16 w-full max-w-lg mx-auto mt-4">
             <div class="flex flex-wrap -mx-2 justify-center">
-                <div class="w-48 pr-2 pb-2">
+                <div class="w-40 md:w-48 pr-2 pb-2">
                     <a href="{{ url('/calc/bmi') }}">
                         <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
                             <img src="/storage/ic_bmi.svg" class="mt-4">
@@ -40,7 +44,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="w-48 pr-2 pb-2">
+                <div class="w-40 md:w-48 pr-2 pb-2">
                     <a href="{{ url('/calc/paint') }}">
                         <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
                             <img src="/storage/ic_paint.svg" class="mt-4">
@@ -48,7 +52,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="w-48 pr-2 pb-2">
+                <div class="w-40 md:w-48 pr-2 pb-2">
                     <a href="{{ url('/calc/creditcard') }}">
                         <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
                             <img src="/storage/ic_credit.svg" class="mt-4">
@@ -56,7 +60,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="w-48 pr-2 pb-2">
+                <div class="w-40 md:w-48 pr-2 pb-2">
                     <a href="{{ url('/calc/power') }}">
                         <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
                             <img src="/storage/ic_power.svg" class="mt-4">
@@ -64,7 +68,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="w-48 pr-2 pb-2">
+                <div class="w-40 md:w-48 pr-2 pb-2">
                     <a href="{{ url('/calc/mobile') }}">
                         <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
                             <img src="/storage/ic_phone.svg" class="mt-4">

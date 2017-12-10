@@ -25,7 +25,7 @@
 
         <ul class="list-reset flex">
             <li class="mr-6">
-                <a class="text-green font-bold hover:text-green-darker border-b-4 border-green-dark" href="#mobilesubscription">Mobilabonnement</a>
+                <a class="text-green font-bold hover:text-green-darker border-b-4 border-green-dark" href="#mobilesubscription">Sammenlign</a>
             </li>
             <li class="mr-6">
                 <a class="text-green font-bold hover:text-green-darker border-b-4 border-green-dark" href="#about">Om mobilabonnement</a>
@@ -34,7 +34,7 @@
 
         <div class="mt-4">
             <p>De fleste mobilabonnement kommer i dag med fri tale, MMS og SMS inkludert. Fra sommeren 2017 er det heller ikke tillatt for teleoperatørene
-            og ta betalt ekstra for molbilbruk innefor EU / EØS</p>
+            og ta betalt ekstra for molbilbruk innenfor EU / EØS</p>
         </div>
         <div class="mt-4">
             <p>I Norge finnes det kun 3 mobilnett. Selv om det er fri konkurranse der mobiloperatører uten eget nett kan tilby
