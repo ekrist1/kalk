@@ -11,11 +11,14 @@ class MobileController extends Controller
 
         $mobilesubscriptions = Mobile::all();
 
+        $dataAmount = $mobilesubscriptions->unique('data')->sortBy('data')->pluck('data');
+
+
         $mobilesubscriptions->transform(function ($mobilesubscriptions) {
             $mobilesubscriptions['showMore'] = false;
             return $mobilesubscriptions;
         });
 
-        return view('layouts.calc.mobile.show', compact('mobilesubscriptions'));
+        return view('layouts.calc.mobile.show', compact('mobilesubscriptions', 'dataAmount'));
     }
 }

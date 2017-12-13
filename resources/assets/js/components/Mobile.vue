@@ -6,11 +6,11 @@
             </label>
             <select v-model="datavalue" class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow">
                 <option selected>Ingen filter</option>
-                <option v-for="dataamount in uniqDataValue" v-bind:value="dataamount.data">
-                    {{ dataamount.data }} GB
+                <option v-for="dataamount in initialDataAmount" v-bind:value="dataamount">
+                    {{ dataamount | toFixedValue }} GB
                 </option>
             </select>
-            <p class="text-xs mt-1">Skriv inn ønsket dataforbruk</p>
+            <p class="text-xs mt-1">Velg ønsket dataforbruk</p>
         </div>
         <p class="mt-4">
             <button class="text-blue font-bold hover:text-blue-darker" @click="sortedCards('asc')">Laveste pris</button> |
@@ -28,7 +28,7 @@
                     <div class="w-full md:w-1/3 px-2">
                         <div class="bg-grey h-16">
                             <p class="text-sm text-center pt-2 text-grey-darkest">Datamengde</p>
-                            <p class="text-3xl font-light text-center">{{ mobilesubscription.data }} GB </p>
+                            <p class="text-3xl font-light text-center">{{ mobilesubscription.data | toFixedValue }} GB </p>
                         </div>
                     </div>
                     <div class="w-full md:w-1/3 px-2">
@@ -82,6 +82,9 @@
             initialMobileSubscriptions: {
                 type: Array
             },
+            initialDataAmount: {
+                type: Array
+            }
         },
         data () {
             return {
@@ -106,18 +109,18 @@
             fixedCalculatedPrice: function (value) {
                 return _.round(value, 3);
             },
+            toFixedValue: function (value) {
+                return Math.round(value * 2).toFixed() / 2;
 
+            }
 
         },
         computed: {
-            uniqDataValue () {
-                return _.uniqBy(this.mobilesubscriptions, 'data');
-            },
             filteredSubscriptions () {
                 if(this.datavalue === 'Ingen filter'){
                     return this.mobilesubscriptions;
                 }
-                return _.filter(this.mobilesubscriptions, {'data': this.datavalue});
+               return _.filter(this.mobilesubscriptions, {'data': this.datavalue});
             }
         },
         mounted() {

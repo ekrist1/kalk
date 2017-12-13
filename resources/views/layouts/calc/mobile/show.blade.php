@@ -43,7 +43,7 @@
         <div id="mobilesubscription" class="mt-4">
         </div>
 
-        <mobile :initial-mobile-subscriptions="{{ $mobilesubscriptions }}"></mobile>
+        <mobile :initial-mobile-subscriptions="{{ $mobilesubscriptions }}" :initial-data-amount="{{ $dataAmount }}"></mobile>
 
 
         <div id="about" class="mt-4">
