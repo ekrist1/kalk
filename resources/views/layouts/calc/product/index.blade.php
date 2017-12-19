@@ -45,6 +45,7 @@
             </div>
            @endforeach
         </div>
+        {{ $products->appends(['keyword' => Request::get('keyword')])->links() }}
     </div>
 
 @endsection

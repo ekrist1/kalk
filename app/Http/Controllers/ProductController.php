@@ -17,11 +17,11 @@ class ProductController extends Controller
             'category' => 'max:100|string'
         ]);
         if ($request->has('keyword') || $request->has('category')) {
-            $products = Product::with('category')->getScoreCount()->searchProducts($request->query())->get();
+            $products = Product::with('category')->getScoreCount()->searchProducts($request->query())->paginate(18);
             return view('layouts.calc.product.index', compact('products', 'categories'));
         }
-        $products = Product::with('category')->getScoreCount()->get();
-
+        $products = Product::with('category')->getScoreCount()->paginate(18);
+        //dd($products);
         return view('layouts.calc.product.index', compact('products', 'categories'));
 
     }
