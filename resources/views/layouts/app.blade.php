@@ -27,7 +27,7 @@
                             <img src="{{ asset('storage/heisann.svg') }}" alt="{{ config('app.name', 'Heisann') }}">
                         </a>
                     </div>
-                    <div class="flex-1 text-right">
+                    <div class="flex-1 text-right whitespace-no-wrap">
 
                         @guest
                             <a class="no-underline hover:underline text-grey-darker pr-3 text-sm" href="{{ url('/login') }}">Logg inn</a>

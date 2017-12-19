@@ -30,7 +30,7 @@
     <div class="px-2">
         <div class="flex flex-wrap -mx-2">
            @foreach($products as $product)
-            <div class="sm:w-full md:w-1/3 px-2 mb-4">
+            <div class="w-full sm:w-full md:w-1/3 px-2 mb-4">
                 <a href="{{ route('showproduct', ['slug' => $product->slug]) }}">
                 <div class="h-32 p-3 bg-white shadow-lg rounded overflow-hidden">
                     <h4 class="text-xl mb-3 text-grey-darker">{{ $product->name }}</h4>
