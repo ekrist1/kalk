@@ -10,18 +10,18 @@
 @endsection
 
 
-        <!-- fremtidig bruk
+        <!-- login
         @if(Route::has('login'))
             <div class="absolute pin-t pin-r mt-4 mr-4">
                 @auth
                     <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-brand-dark uppercase">Home</a>
                 @else
-                    <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-brand-dark uppercase pr-6">Login</a>
-                    <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-brand-dark uppercase">Register</a>
+                    <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-brand-dark uppercase pr-6">Logg inn</a>
+                    <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-brand-dark uppercase">Ny bruker</a>
                 @endauth
             </div>
         @endif
-            -->
+        -->
 
 @section('content')
     <div class="fehome bg-no-repeat bg-cover bg-center min-h-screen">
@@ -73,6 +73,14 @@
                         <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
                             <img src="/storage/ic_phone.svg" class="mt-4">
                             <p class="font-bold mt-2 text-grey-darkest">Beste mobilavtale</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-40 md:w-48 pr-2 pb-2">
+                    <a href=" {{ url('/products') }}">
+                        <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
+                            <img src="/storage/ic_product.svg" class="mt-4">
+                            <p class="font-bold mt-2 text-grey-darkest">Produktomtaler (beta)</p>
                         </div>
                     </a>
                 </div>

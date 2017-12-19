@@ -68,4 +68,14 @@ div.homepagebackground {
 @media (min-width: 576px) {
     .fehome { background-image: url('/storage/background.jpg'); }
 }
-
+.fade-transition {
+    transition: all 0.8s ease;
+    overflow: hidden;
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+}
+.fade-enter, .fade-leave {
+    opacity: 0;
+    visibility: hidden;
+}

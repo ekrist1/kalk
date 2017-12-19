@@ -21,6 +21,13 @@ Route::view('/calc/bmi', 'layouts/calc/bmi/show');
 Route::view('/calc/paint', 'layouts/calc/paint/show');
 Route::get('/calc/power', 'PowerController@index');
 Route::get('/calc/creditcard', 'CreditcardController@index');
-Route::get('/admin/power', 'PowerController@create');
-Route::patch('/admin/power', 'PowerController@store');
+
+//Route::get('/admin/power', 'PowerController@create');
+//Route::patch('/admin/power', 'PowerController@store');
 Route::get('/calc/mobile', 'MobileController@index');
+
+Route::get('/product/{slug}', 'ProductController@show')->name('showproduct');
+Route::get('/products', 'ProductController@index');
+
+Route::get('/review/{slug}', 'ReviewController@create');
+Route::post('/review/{slug}', 'ReviewController@store');

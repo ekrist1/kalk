@@ -28,23 +28,22 @@
                         </a>
                     </div>
                     <div class="flex-1 text-right">
-                       <!-- fremtidig bruk
+
                         @guest
-                            <a class="no-underline hover:underline text-grey-darker pr-3 text-sm" href="{{ url('/login') }}">Login</a>
-                            <a class="no-underline hover:underline text-grey-darker text-sm" href="{{ url('/register') }}">Register</a>
+                            <a class="no-underline hover:underline text-grey-darker pr-3 text-sm" href="{{ url('/login') }}">Logg inn</a>
+                            <a class="no-underline hover:underline text-grey-darker text-sm" href="{{ url('/register') }}">Ny bruker</a>
                         @else
                             <span class="text-grey-darker text-sm pr-4">{{ Auth::user()->name }}</span>
 
                             <a href="{{ route('logout') }}"
                                 class="no-underline hover:underline text-grey-darker text-sm"
                                 onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">Logout</a>
+                                document.getElementById('logout-form').submit();">Logg ut</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
                         @endguest
 
-                           -->
                     </div>
                 </div>
             </div>
@@ -55,9 +54,12 @@
     </div>
 
     <footer class="text-center text-grey text-xs mt-auto mb-3 px-3"> <p>Nettsiden eies av Altonlin.no -
-            <a href="https://www.altonline.no/annonsering">Annonser</a> - <a href="https://www.altonline.no/kontakt-oss">Kontakt oss</a>
+            <a href="https://www.altonline.no/annonsering">Annonser</a> -
+            <a href="https://www.altonline.no/kontakt-oss">Kontakt oss</a> -
+            <a href="https://www.altonline.no/personvernerklaering" target="_blank">Personvernerklæring</a>
         </p>
     </footer>
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReviewsTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateReviewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('score');
+            $table->string('name');
             $table->text('body');
-            $table->boolean('is_published')->default(false);
-            $table->integer('user_id')->nullable();
-            $table->integer('reviewable_id');
-            $table->string('reviewable_type');
+            $table->boolean('is_active')->default(true);
+            $table->string('affiliate_url')->nullable();
+            $table->boolean('is_featured')->default(false);
+            $table->string('slug')->unique();
+            $table->integer('category_id');
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ class CreateReviewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('products');
     }
 }

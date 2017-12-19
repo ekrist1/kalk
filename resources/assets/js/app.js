@@ -29,6 +29,10 @@ Vue.component('calc-paint', require('./components/CalcPaint.vue'));
 Vue.component('power', require('./components/Power.vue'));
 Vue.component('creditcard', require('./components/Creditcard.vue'));
 Vue.component('mobile', require('./components/Mobile.vue'));
+Vue.component('toggle', require('./components/utilities/showhide.vue'));
+Vue.component('imageslider', require('./components/utilities/imageslider.vue'));
+Vue.component('productCategories', require('./components/ProductCategories.vue'));
+Vue.component('flash', require('./components/utilities/flash.vue'));
 
 const app = new Vue({
     el: '#app'
