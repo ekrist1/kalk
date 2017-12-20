@@ -27,6 +27,12 @@
                 <a href="{{ url()->current() }}">Nullstil søk</a>
             @endif
     </div>
+    <div class="px-2 mb-4">
+        @if (Request::get('category'))
+            <p><strong>Gjeldende kategori:</strong> {{ Request::get('category') }}</p>
+            <a href="{{ url()->current() }}">Se alle kategorier</a>
+        @endif
+    </div>
     <div class="px-2">
         <div class="flex flex-wrap -mx-2">
            @foreach($products as $product)
@@ -45,7 +51,7 @@
             </div>
            @endforeach
         </div>
-        {{ $products->appends(['keyword' => Request::get('keyword')])->links() }}
+        {{ $products->appends(['keyword' => Request::get('keyword'), 'category' => Request::get('category')])->links() }}
     </div>
 
 @endsection

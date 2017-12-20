@@ -38,13 +38,13 @@ class Product extends Model
         return $query->withCount([
             'reviews',
             'reviews as review_happy_count' => function ($query) {
-                $query->where('score', 1);
+                $query->where('score', 5);
             },
             'reviews as review_neutral_count' => function ($query) {
-                $query->where('score', 2);
+                $query->where('score', 3);
             },
             'reviews as review_dissatisfied_count' => function ($query) {
-                $query->where('score', 3);
+                $query->where('score', 1);
             }
 
         ]);

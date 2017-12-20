@@ -27,6 +27,6 @@ Todo:
 - CSV import
 - Company reviews
 
-Logo and graphics are trademark and under copyrights. 
+Logo and graphics are trademark and under copyright. 
 
 Project is currently not supported - use at your own risk

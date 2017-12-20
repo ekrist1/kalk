@@ -29,6 +29,11 @@ class ProductController extends Controller
 
         $product = Product::where('slug', $slug)->with('images')->getScoreCount()->first();
 
+        if (count($product->reviews) >= 1) {
+            $averageReviewScore = round($product->reviews->sum('score') / count($product->reviews), '1', PHP_ROUND_HALF_DOWN);
+        } else {
+            $averageReviewScore = 0;
+        }
 
         if ($product->images->isNotEmpty()) {
             $images = $product->images->pluck('name');
@@ -36,7 +41,7 @@ class ProductController extends Controller
         else {
             $images = collect(['/storage/productimages/noimage.png']);
         }
-        //dd($images);
-        return view('layouts.calc.product.show', compact('product', 'images'));
+
+        return view('layouts.calc.product.show', compact('product', 'images', 'averageReviewScore'));
     }
 }

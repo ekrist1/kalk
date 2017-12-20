@@ -27,7 +27,7 @@
         <imageslider :initial-images="{{ $images }}"></imageslider>
 
         <div class="mb-4">
-            <h3 class="block text-grey-dark font-bold text-3xl text-center mt-4">
+            <h3 itemprop="name" class="block text-grey-dark font-bold text-3xl text-center mt-4">
                 {{ $product->name }}
             </h3>
             <div class="text-center">
@@ -54,7 +54,7 @@
                             @include('partials.reviewsimilies', ['score' => $review->score])
                         </div>
                         <div class="flex-auto ml-4">
-                            <p class="text-grey-darker">{!! nl2br(e($review->body))!!}</p>
+                            <p itemprop="description" class="text-grey-darker">{!! nl2br(e($review->body))!!}</p>
                             <p class="text-xs text-grey mt-2">Skrevet av: {{ str_limit(optional($review->user)->name, 3, ' ***') }} - {{ $review->created_at->diffForHumans() }}</p>
                         </div>
                     </div>
@@ -65,3 +65,19 @@
 
 
 @endsection
+
+@push('scripts')
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Product",
+      "name": "{{ $product->name }}",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingValue": "{{ $averageReviewScore }}",
+        "reviewCount": "{{ count($product->reviews) }}" }
+      }
+    </script>
+@endpush
