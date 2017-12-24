@@ -40,7 +40,7 @@ class ProductController extends Controller
 
         if ($product->images->isNotEmpty()) {
             $images = $product->images->map(function ($item, $key) {
-                return '/' . $item['name'];
+                return '/storage/' . $item['name'];
             });
         }
         else {
