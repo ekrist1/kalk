@@ -1,1 +1,3 @@
 !.gitignore
+!/productimages/noimage.png
+/productimages/*

@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'password' => 'Passwords must be at least six characters and match the confirmation.',
-    'reset' => 'Your password has been reset!',
-    'sent' => 'We have e-mailed your password reset link!',
+    'password' => 'Passordet må være minimum 6 bokstaver langt og bekreftelsefeltet må være likt',
+    'reset' => 'Passordet ditt har blitt byttet',
+    'sent' => 'Vi har sendt deg en e-post med lenke for å lage nytt passord. Sjekk spam-mappen om du ikke får den i innboksen din',
     'token' => 'This password reset token is invalid.',
-    'user' => "We can't find a user with that e-mail address.",
+    'user' => "Vi kan ikke finne en bruker med denne e-postadressen på Heisann.no",
 
 ];

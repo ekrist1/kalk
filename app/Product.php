@@ -7,6 +7,8 @@ use MongoDB\Driver\Query;
 
 class Product extends Model
 {
+    protected $guarded = ['id'];
+
     public function reviews() {
         return $this->morphMany('App\Review', 'reviewable');
     }
