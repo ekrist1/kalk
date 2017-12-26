@@ -39,6 +39,21 @@
             <div class="w-full sm:w-full md:w-1/3 px-2 mb-4">
                 <a href="{{ route('showproduct', ['slug' => $product->slug]) }}">
                 <div class="h-32 p-3 bg-white shadow-lg rounded overflow-hidden">
+                    @if (count($product->images) >= 1)
+                        @foreach($product->images as $image)
+                            @if ($loop->first)
+                                <img class="w-10 h-10 rounded-full mr-4 float-right"
+                                     src="/storage/{{ $image->name }}"
+                                     alt="Produktbilde"
+                                >
+                            @endif
+                        @endforeach
+                    @else
+                        <img class="w-10 h-10 rounded-full mr-4 float-right"
+                             src="/storage/productimages/noimage.png"
+                             alt="Produktbilde"
+                        >
+                    @endif
                     <h4 class="text-xl mb-3 text-grey-darker">{{ $product->name }}</h4>
                     <div class="mb-4 text-left font-bold text-grey-darker">
                         <img src="{{ url('/storage/ic_16_satisfied.svg') }}"> {{ $product->review_happy_count }} {{ $product->review_happy_count === 1 ? 'omtale' : 'omtaler' }}
