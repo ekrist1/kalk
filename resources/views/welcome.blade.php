@@ -41,48 +41,48 @@
                 <div class="w-40 md:w-48 pr-2 pb-2">
                     <a href="{{ url('/calc/bmi') }}">
                         <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
-                            <img src="/storage/ic_bmi.svg" class="mt-4">
-                            <p class="font-bold mt-2 text-grey-darkest">BMI kalkulator</p>
+                            <img src="/storage/ic_bmi.svg" class="mt-4" alt="BMI kalkulator ikon">
+                            <h2 class="text-base font-bold mt-2 text-grey-darkest">BMI kalkulator</h2>
                         </div>
                     </a>
                 </div>
                 <div class="w-40 md:w-48 pr-2 pb-2">
                     <a href="{{ url('/calc/paint') }}">
                         <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
-                            <img src="/storage/ic_paint.svg" class="mt-4">
-                            <p class="font-bold mt-2 text-grey-darkest">Malekalkulator</p>
+                            <img src="/storage/ic_paint.svg" class="mt-4" alt="Malekalkulator ikon">
+                            <h2 class="text-base font-bold mt-2 text-grey-darkest">Malekalkulator</h2>
                         </div>
                     </a>
                 </div>
                 <div class="w-40 md:w-48 pr-2 pb-2">
                     <a href="{{ url('/calc/creditcard') }}">
                         <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
-                            <img src="/storage/ic_credit.svg" class="mt-4">
-                            <p class="font-bold mt-2 text-grey-darkest">Finn beste kredittkort</p>
+                            <img src="/storage/ic_credit.svg" class="mt-4" alt="Ikon kredittkortoversikt">
+                            <h2 class="text-base font-bold mt-2 text-grey-darkest">Finn beste kredittkort</h2>
                         </div>
                     </a>
                 </div>
                 <div class="w-40 md:w-48 pr-2 pb-2">
                     <a href="{{ url('/calc/power') }}">
                         <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
-                            <img src="/storage/ic_power.svg" class="mt-4">
-                            <p class="font-bold mt-2 text-grey-darkest">Finn beste strømavtale</p>
+                            <img src="/storage/ic_power.svg" class="mt-4" alt="Ikon strømoversikt">
+                            <h2 class="text-base font-bold mt-2 text-grey-darkest">Finn beste strømavtale</h2>
                         </div>
                     </a>
                 </div>
                 <div class="w-40 md:w-48 pr-2 pb-2">
                     <a href="{{ url('/calc/mobile') }}">
                         <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
-                            <img src="/storage/ic_phone.svg" class="mt-4">
-                            <p class="font-bold mt-2 text-grey-darkest">Beste mobilavtale</p>
+                            <img src="/storage/ic_phone.svg" class="mt-4" alt="Ikon strømoversikt">
+                            <h2 class="text-base font-bold mt-2 text-grey-darkest">Beste mobilavtale</h2>
                         </div>
                     </a>
                 </div>
                 <div class="w-40 md:w-48 pr-2 pb-2">
                     <a href=" {{ url('/products') }}">
                         <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
-                            <img src="/storage/ic_product.svg" class="mt-4">
-                            <p class="font-bold mt-2 text-grey-darkest">Produktomtaler (beta)</p>
+                            <img src="/storage/ic_product.svg" class="mt-4" alt="Ikon produktomtaler">
+                            <h2 class="text-base font-bold mt-2 text-grey-darkest">Produktomtaler (beta)</h2>
                         </div>
                     </a>
                 </div>
