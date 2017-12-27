@@ -27,9 +27,9 @@
         <imageslider :initial-images="{{ $images }}"></imageslider>
 
         <div class="mb-4">
-            <h3 itemprop="name" class="block text-grey-dark font-bold text-3xl text-center mt-4">
+            <h1 itemprop="name" class="block text-grey-dark font-bold text-3xl text-center mt-4 mb-2">
                 {{ $product->name }}
-            </h3>
+            </h1>
             <div class="text-center">
                 <toggle text="{{ $product->body }}"></toggle>
             </div>
@@ -43,9 +43,9 @@
 
             </div>
             <div class="mb-4 text-center font-bold text-grey-darker">
-                <img src="{{ url('/storage/ic_16_satisfied.svg') }}"> {{ $product->review_happy_count }} omtaler
-                <img src="{{ url('/storage/ic_16_neutral.svg') }}">  {{ $product->review_neutral_count }} omtaler
-                <img src="{{ url('/storage/ic_16_dissatisfied.svg') }}"> {{ $product->review_dissatisfied_count }} omtaler
+                <img src="{{ url('/storage/ic_16_satisfied.svg') }}" alt="Bilde fornøyd"> {{ $product->review_happy_count }} omtaler
+                <img src="{{ url('/storage/ic_16_neutral.svg') }}" alt="Bilde passe fornøyd">  {{ $product->review_neutral_count }} omtaler
+                <img src="{{ url('/storage/ic_16_dissatisfied.svg') }}" alt="Bilde misfornøyd"> {{ $product->review_dissatisfied_count }} omtaler
             </div>
             <div class="flex flex-wrap">
                 @foreach($product->reviews as $review)
