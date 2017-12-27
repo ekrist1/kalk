@@ -24,7 +24,7 @@ class ProductController extends Controller
             return view('layouts.calc.product.index', compact('products', 'categories'));
         }
         $products = Product::with('category', 'images')->getScoreCount()->paginate(18);
-        
+
         return view('layouts.calc.product.index', compact('products', 'categories'));
 
     }

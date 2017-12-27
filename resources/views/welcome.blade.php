@@ -7,6 +7,8 @@
     <meta property="og:title"              content="Heisann - vi hjelper deg" />
     <meta property="og:description"        content="Heisann hjelper deg med å finne de beste avtalene enten det gjelder mobilabonnement, strøm eller kredittkort" />
     <meta property="og:image"              content="{{ asset('storage/background.jpg') }}" />
+
+    <title>{{ config('app.name', 'Heisann') }}</title>
 @endsection
 
 
