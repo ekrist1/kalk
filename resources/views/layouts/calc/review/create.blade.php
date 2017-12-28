@@ -1,5 +1,15 @@
 @extends('layouts.app')
 
+@section('meta')
+    <title>Skriv ny produktomtale: {{ $product->name }}</title>
+    <meta name="description" content="Positive eller negative erfaringer av {{ $product->name }}? Legg til en ny produktomtale.">
+    <meta property="og:url"                content="https://heisann.no/review/{{ $product->slug }}" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="Skriv ny produktomtale: {{ $product->name }}" />
+    <meta property="og:description"        content="Positive eller negative erfaringer av {{ $product->name }}? Legg til en ny produktomtale." />
+    <meta property="og:image"              content="{{ asset('storage/product.jpg') }}" />
+@endsection
+
 @section('content')
 
     @hasrole('public')
