@@ -41,6 +41,10 @@
                             <a class="no-underline hover:underline text-brand-dark text-sm" href="{{ route('password.request') }}">
                                 Glemt passord?
                             </a>
+
+                            <a class="no-underline hover:underline text-brand-dark text-sm ml-2" href="{{ route('auth.resend') }}">
+                                Send ny kontoaktivering
+                            </a>
                         </div>
                     </div>
                 </form>

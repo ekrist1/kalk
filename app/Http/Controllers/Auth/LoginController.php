@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Validation\Rule;
+use Illuminate\Http\Request;
 
 
 class LoginController extends Controller
@@ -42,7 +44,31 @@ class LoginController extends Controller
     }
     public function redirectTo()
     {
-        return Session::get('backUrl') ? Session::get('backUrl') :   $this->redirectTo;
+        return Session::get('backUrl') ? Session::get('backUrl') : $this->redirectTo;
+    }
+
+    /**
+     * Custom validation to check if a user is activated
+     *
+     */
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            $this->username() => [
+                'required', 'string',
+                Rule::exists('users')->where(function ($query) {
+                    $query->where('active', true);
+                })
+            ],
+
+            'password' => 'required|string',
+        ], $this->validationErrors());
+    }
+
+    protected function validationErrors() {
+        return [
+            $this->username() . '.exists' => 'Ingen konto funnet, eller konto ikke aktivert ennå'
+        ];
     }
 
     }

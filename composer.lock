@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "71bc907e200fa69121fdd27645a55943",
+    "content-hash": "9862ea804d759f28c0211a81f524680c",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -659,16 +659,16 @@
         },
         {
             "name": "laravel-frontend-presets/tailwindcss",
-            "version": "0.3.1",
+            "version": "0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-frontend-presets/tailwindcss.git",
-                "reference": "15eabc4e27d2fbb7d321b3e2c0824f700294a2e9"
+                "reference": "9b4a2f91506dcb40987e1408e5e12f389770bc19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-frontend-presets/tailwindcss/zipball/15eabc4e27d2fbb7d321b3e2c0824f700294a2e9",
-                "reference": "15eabc4e27d2fbb7d321b3e2c0824f700294a2e9",
+                "url": "https://api.github.com/repos/laravel-frontend-presets/tailwindcss/zipball/9b4a2f91506dcb40987e1408e5e12f389770bc19",
+                "reference": "9b4a2f91506dcb40987e1408e5e12f389770bc19",
                 "shasum": ""
             },
             "require": {
@@ -697,7 +697,7 @@
                 "preset",
                 "tailwindcss"
             ],
-            "time": "2017-11-24T10:14:18+00:00"
+            "time": "2017-12-20T03:51:42+00:00"
         },
         {
             "name": "laravel/framework",
@@ -1814,16 +1814,16 @@
         },
         {
             "name": "spatie/laravel-permission",
-            "version": "2.7.6",
+            "version": "2.7.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "03eb748141432b5d94eb1613b99f818aac1f5070"
+                "reference": "e63427e4c364061f05f03fc893727198669c43c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/03eb748141432b5d94eb1613b99f818aac1f5070",
-                "reference": "03eb748141432b5d94eb1613b99f818aac1f5070",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/e63427e4c364061f05f03fc893727198669c43c7",
+                "reference": "e63427e4c364061f05f03fc893727198669c43c7",
                 "shasum": ""
             },
             "require": {
@@ -1875,7 +1875,7 @@
                 "security",
                 "spatie"
             ],
-            "time": "2017-11-27T10:22:46+00:00"
+            "time": "2018-01-02T16:39:56+00:00"
         },
         {
             "name": "spatie/temporary-directory",

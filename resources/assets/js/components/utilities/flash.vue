@@ -20,7 +20,7 @@
             hide() {
                 setTimeout(() => {
                     this.message = '';
-                }, 3000);
+                }, 9000);
             },
         }
     }

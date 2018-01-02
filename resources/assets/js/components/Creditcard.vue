@@ -33,6 +33,12 @@
                             <p class="text-3xl font-light text-center">{{ creditcard.interestfree_days }} dager </p>
                         </div>
                     </div>
+                    <div class="w-full px-2 mt-2" v-if="creditcard.affiliate_url">
+                        <a v-bind:href="creditcard.affiliate_url" target="_blank" class="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center w-full">
+                            <span class="ml-auto mr-auto">Søknad {{ creditcard.name }}</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
                     <button v-if="creditcard.showMore" class="text-blue font-bold hover:text-blue-darker ml-2 mt-2" @click="creditcard.showMore = !creditcard.showMore">
                         Vis mindre informasjon <img src="/storage/ic_expand_less.svg">
                     </button>
@@ -50,8 +56,8 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="flex items-center bg-indigo text-white text-sm font-bold px-4 py-3 mt-6" role="alert">
+                <p class="mt-3">Renteeksempel:</p>
+                <div class="flex items-center bg-indigo text-white text-sm font-bold px-4 py-3 mt-1" role="alert">
                    <img src="/storage/ic_timeline.svg">
                     <p class="ml-3">
                         En kreditt på {{ creditvalue.toLocaleString('de-DE') }} vil koste deg ca.

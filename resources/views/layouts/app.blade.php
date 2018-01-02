@@ -14,6 +14,14 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,900" rel="stylesheet">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+
 </head>
 <body class="flex flex-col bg-grey-background min-h-screen border-indigo border-t-2 font-normal font-family: 'Source Sans Pro', sans-serif">
     <div id="app">
@@ -22,7 +30,7 @@
                 <div class="flex items-center justify-center h-12">
                     <div class="mr-6">
                         <a href="{{ url('/') }}" class="no-underline">
-                            <img src="{{ asset('storage/heisann.svg') }}" alt="{{ config('app.name', 'Heisann') }}">
+                            @include('partials.logo')
                         </a>
                     </div>
                     <div class="flex-1 text-right whitespace-no-wrap">
@@ -46,6 +54,8 @@
                 </div>
             </div>
         </nav>
+
+        @include('partials.success')
 
         @yield('content')
 

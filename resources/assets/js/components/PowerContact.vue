@@ -13,8 +13,8 @@
         data () {
             return {
                 showCompanyProfile: false,
-                showCompanyProfileText: 'Vis firmainformasjon',
-                closeCompanyProfileText: 'Skjul firmainformasjon'
+                showCompanyProfileText: 'Vis mer informasjon',
+                closeCompanyProfileText: 'vis mindre informasjon'
             }
         },
         methods: {
