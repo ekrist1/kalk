@@ -28,12 +28,12 @@
 @section('content')
     <div class="fehome bg-no-repeat bg-cover bg-center min-h-screen">
         <div class="mb-4">
-            <label class="block text-white text-4xl font-bold text-center pt-4 text-shadow-white" for="tittel">
+            <label class="block text-white text-4xl font-bold text-center pt-4" for="tittel">
                 Heisann - vi hjelper deg.
             </label>
         </div>
         <div class="mb-8">
-            <p class="text-center text-white text-shadow-white">Heisann hjelper deg å finne de beste produktene. Prøv også ut våre nyttige kalkulatorer.</p>
+            <p class="text-center text-white">Heisann hjelper deg å finne de beste produktene. Prøv også ut våre nyttige kalkulatorer.</p>
         </div>
 
         <div class="px-6 pb-8 pt-20 md:pt-16 w-full max-w-lg mx-auto mt-4">
@@ -79,10 +79,18 @@
                     </a>
                 </div>
                 <div class="w-40 md:w-48 pr-2 pb-2">
-                    <a href=" {{ url('/products') }}">
+                    <a href="{{ url('/products') }}">
                         <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
                             <img src="/storage/ic_product.svg" class="mt-4" alt="Ikon produktomtaler">
                             <h2 class="text-base font-bold mt-2 text-grey-darkest">Produktomtaler (beta)</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-40 md:w-48 pr-2 pb-2">
+                    <a href="#">
+                        <div class="bg-grey-lightest h-32 text-center opacity-75 hover:bg-indigo-lightest">
+                            <img src="/storage/ic_business.svg" class="mt-4" alt="Ikon produktomtaler">
+                            <h2 class="text-base font-bold mt-2 text-grey-darkest">Firmaomtaler (kommer)</h2>
                         </div>
                     </a>
                 </div>
